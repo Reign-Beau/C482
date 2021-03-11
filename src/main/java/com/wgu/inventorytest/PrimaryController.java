@@ -214,7 +214,7 @@ private void displayAlert(int alertType) {
     };
 
     
-    //search features
+    //part search features 
      @FXML void partSearchBtnAction(ActionEvent event) {
 
         ObservableList<Part> allParts = Inventory.getPartArr();
@@ -249,7 +249,40 @@ private void displayAlert(int alertType) {
 
     }
 
-    
+    //product search features
+    @FXML
+    void productSearchBtnAction(ActionEvent event) {
+
+        ObservableList<Product> allProducts = Inventory.getProductArr();
+        ObservableList<Product> productsFound = FXCollections.observableArrayList();
+        String searchString = textfieldSearchBox2.getText();
+
+        for (Product product : allProducts) {
+            if (String.valueOf(product.getId()).contains(searchString) ||
+                    product.getName().contains(searchString)) {
+                productsFound.add(product);
+            }
+        }
+
+        tableviewProducts.setItems(productsFound);
+
+        if (productsFound.size() == 0) {
+            displayAlert(2);
+        }
+    }
+
+    /**
+     * Refreshes product table view to show all products when products search text field is empty.
+     *
+     * @param event Products search text field key pressed.
+     */
+    @FXML
+    void productSearchTextKeyPressed(KeyEvent event) {
+
+        if (textfieldSearchBox2.getText().isEmpty()) {
+            tableviewProducts.setItems(Inventory.getProductArr());
+        }
+    }
     
     
     /**

@@ -49,12 +49,12 @@
                                  </HBox.margin></TextField>
                            </children>
                         </HBox>
-                        <TableView fx:id="tblviewParts" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="450.0">
+                        <TableView fx:id="tableviewParts" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="450.0">
                           <columns>
-                            <TableColumn prefWidth="49.0" text="Part ID" />
-                            <TableColumn prefWidth="98.0" text="Part Name" />
-                              <TableColumn prefWidth="110.0" text="Inventory Level" />
-                              <TableColumn prefWidth="135.0" text="Price/Cost per Unit" />
+                            <TableColumn fx:id="columnPartsID" prefWidth="49.0" text="Part ID" />
+                            <TableColumn fx:id="columnPartsName" prefWidth="98.0" text="Part Name" />
+                              <TableColumn fx:id="columnPartsStock" prefWidth="110.0" text="Inventory Level" />
+                              <TableColumn fx:id="columnPartsPrice" prefWidth="135.0" text="Price/Cost per Unit" />
                           </columns>
                         </TableView>
                         <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
@@ -63,7 +63,7 @@
                                  <HBox.margin>
                                     <Insets left="275.0" />
                                  </HBox.margin></Button>
-                              <Button fx:id="btnModifyParts" mnemonicParsing="false" text="Modify" />
+                              <Button fx:id="btnModifyParts" mnemonicParsing="false" onAction="#modifyPartsButtonPushed" text="Modify" />
                               <Button fx:id="btnDeleteParts" mnemonicParsing="false" onAction="#deletePartsButtonPushed" text="Delete" />
                            </children>
                         </HBox>
@@ -86,12 +86,12 @@
                                  </HBox.margin></TextField>
                            </children>
                         </HBox>
-                        <TableView fx:id="tblviewProducts" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="450.0">
+                        <TableView fx:id="tableviewProducts" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="450.0">
                           <columns>
-                            <TableColumn prefWidth="69.0" text="Product ID" />
-                            <TableColumn prefWidth="98.0" text="Product Name" />
-                              <TableColumn prefWidth="97.0" text="Inventory Level" />
-                              <TableColumn prefWidth="121.0" text="Price/Cost per Unit" />
+                            <TableColumn fx:id="columnProductsID" prefWidth="69.0" text="Product ID" />
+                            <TableColumn fx:id="columnProductsName" prefWidth="98.0" text="Product Name" />
+                              <TableColumn fx:id="columnProductsStock" prefWidth="97.0" text="Inventory Level" />
+                              <TableColumn fx:id="columnProductsPrice" prefWidth="121.0" text="Price/Cost per Unit" />
                           </columns>
                         </TableView>
                         <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
